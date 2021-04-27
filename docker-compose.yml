@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  webapp:
+    container_name: webapp
+    image: anoniclown/travel_web:1.7
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - 8282:8282
+    command:
+      - bash
+      - -c
+      - |
+        /service/wait-for-it.sh database:3306 -t 5
+        python3 server.py
+
+  database:
+    container_name: database
+    image: jeunna/travel_mysql
+    restart: always
+    volumes:
+      - ./database:/var/lib/mysql
+    env_file:
+      - ./db.env
+    command:
+      mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      timeout: 5s
+      retries: 2
+    ports:
+      - "3306:3306"
+
+  crawler:
+    container_name: crawler
+    image: jeunna/travel_crawler
+    restart: always
+    stdin_open: true
+    tty: true
+    privileged: true
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
