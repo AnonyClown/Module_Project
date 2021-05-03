@@ -2,10 +2,14 @@
 
 코로나로 인해 세계 각국의 해외 입국 규정이 변경되었습니다. 입국 규정을 한 눈에 알아보기 위해 만든 웹 사이트입니다.
 
+
+
 ## Getting Started / 어떻게 시작하나요?
 
 Docker-compose.yml 파일을 실행시키면 자동적으로 모든 것이 실행 될 것입니다.
 powershell을 관리자 모드로 실행 시킨 후 "Docker-compose up" 명령어를 입력해주면 됩니다.
+
+
 
 ### Prerequisites / 선행 조건
 
@@ -15,6 +19,9 @@ powershell을 관리자 모드로 실행 시킨 후 "Docker-compose up" 명령�
 위에 폴더 중 database 폴더는 꼭 다운로드 받아야합니다. (compose 시 필요합니다.)
 ```
 
+
+
+
 ### Installing / 설치
 
 아래 사항들로 현 프로젝트에 관한 모듈들을 설치할 수 있습니다.
@@ -23,9 +30,15 @@ powershell을 관리자 모드로 실행 시킨 후 "Docker-compose up" 명령�
 (선택) Docker Desktop이 설치되어 있으면 좀 더 한 눈에 컨테이너들이 실행 되는 것을 확인할 수 있습니다.
 ```
 
+
+
+
 ## Running the tests / 테스트의 실행
 
 관리자 권한으로 powershell 실행 후 docker-compose.yml 파일 경로로 들어가 "docker-compose up" 명령어만 입력해줍니다.
+
+
+
 
 ### 테스트는 이런 식으로 동작합니다
 
@@ -48,6 +61,9 @@ powershell을 관리자 모드로 실행 시킨 후 "Docker-compose up" 명령�
 
 9. 원하는 나라를 클릭하여 출입국 규정을 살펴보자!
 ```
+
+
+
 
 ### 테스트는 이런 식으로 작성하시면 됩니다
 
